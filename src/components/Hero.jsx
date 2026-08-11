@@ -28,7 +28,7 @@ export default function Hero() {
           <h1 className="hero__title">
             Catch secrets
             <br />
-            before they <span className="hero__title-leak">leak</span>.
+            before they <span className="hero__title-leak">leak</span>
           </h1>
           <p className="hero__sub">
             LeakX scans your codebase for hardcoded API keys, tokens, and passwords in
