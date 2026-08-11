@@ -84,6 +84,7 @@ After installation, the leakx command can be used directly from the terminal.
 ## Related Links
 
 LeakX CLI: https://github.com/MrSamarjitBanerjee/LeakX
+
 npm Package: https://www.npmjs.com/package/leakx
 
 ---
@@ -94,14 +95,16 @@ This project was built to strengthen practical React development skills while cr
 
 The focus was on:
 
-Reusable component architecture
-Responsive UI development
-React state and effects
-Interactive navigation
-Clean project organization
-Developer-focused product presentation
-Author
+1) Reusable component architecture
+2) Responsive UI development
+3) React state and effects
+4) Interactive navigation
+5) Clean project organization
+6) Developer-focused product presentation
 
+
+
+Author: 
 Samarjit Banerjee
 
 B.Tech in Information Technology
