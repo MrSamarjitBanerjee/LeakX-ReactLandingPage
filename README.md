@@ -10,7 +10,7 @@
   </a>
 </p>
 
-# LeakX — Landing Page
+# LeakX — React Landing Page
 
 A modern, responsive React landing page for **LeakX**, an npm CLI tool designed to detect sensitive data and potential secrets in codebases.
 
