@@ -1,0 +1,201 @@
+/* ---------------------------------------------------------
+   LeakX design tokens
+   The palette mirrors the CLI's own terminal output colors:
+   charcoal background, teal-green for "clean", red for
+   "leak found", amber for masked secrets.
+--------------------------------------------------------- */
+:root {
+  --bg: #0c1015;
+  --bg-raised: #10151c;
+  --surface: #151b23;
+  --surface-hover: #1a212b;
+  --border: #232b36;
+  --border-strong: #333f4d;
+
+  --text: #e7ecf1;
+  --text-dim: #97a3b3;
+  --text-faint: #5c6875;
+
+  --danger: #ff5c5c;
+  --danger-dim: #3a2126;
+  --safe: #38d9a9;
+  --safe-dim: #16302a;
+  --warn: #f5c043;
+  --info: #5b9dff;
+
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(56, 217, 169, 0.08), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(255, 92, 92, 0.06), transparent 60%);
+  background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::selection {
+  background: var(--safe);
+  color: #06110d;
+}
+
+/* Visible keyboard focus, kept subtle but unmistakable */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--safe);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Shared layout utilities used across sections */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--safe);
+  text-transform: lowercase;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--safe);
+  box-shadow: 0 0 0 3px var(--safe-dim);
+}
+
+.section-heading {
+  font-size: clamp(28px, 4vw, 40px);
+  max-width: 620px;
+}
+
+.section-sub {
+  color: var(--text-dim);
+  font-size: 17px;
+  max-width: 560px;
+  margin-top: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--safe);
+  color: #06110d;
+}
+
+.btn-primary:hover {
+  background: #4fe6b8;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-dim);
+  background: var(--surface);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 20px;
+  }
+}

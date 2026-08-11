@@ -1,0 +1,108 @@
+.learned {
+    padding: 90px 0;
+    border-top: 1px solid var(--border);
+}
+
+.learned__inner {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 60px;
+}
+
+.learned__copy {
+    position: sticky;
+    top: 110px;
+    align-self: start;
+}
+
+.learned__eyebrow {
+    display: block;
+    margin-bottom: 18px;
+
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--safe);
+}
+
+.learned__copy h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 22px;
+}
+
+.learned__copy > p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-dim);
+    max-width: 440px;
+}
+
+.learned__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.learned__item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+
+    padding: 28px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.learned__item:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.learned__index {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--safe);
+    padding-top: 3px;
+}
+
+.learned__item h3 {
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.learned__item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-dim);
+    max-width: 500px;
+}
+
+@media (max-width: 900px) {
+    .learned__inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .learned__copy {
+        position: static;
+    }
+}
+
+@media (max-width: 620px) {
+    .learned {
+        padding: 64px 0;
+    }
+
+    .learned__item {
+        grid-template-columns: 32px 1fr;
+        gap: 14px;
+    }
+
+    .learned__copy h2 {
+        font-size: 34px;
+    }
+}
