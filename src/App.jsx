@@ -8,8 +8,16 @@ import Installation from './components/Installation';
 import Roadmap from './components/Roadmap';
 import AboutDeveloper from './components/AboutDeveloper';
 import Footer from './components/Footer';
+import NotFound from './components/NotFound';
 
 export default function App() {
+   const isHomePage =
+    window.location.pathname === "/" ||
+    window.location.pathname === "";
+
+  if (!isHomePage) {
+    return <NotFound />;
+  }
   return (
     <>
       <Navbar />
