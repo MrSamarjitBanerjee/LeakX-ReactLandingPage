@@ -1,0 +1,143 @@
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      color-mix(in srgb, var(--blue) 8%, transparent),
+      transparent 38%
+    ),
+    var(--bg);
+}
+
+.not-found__content {
+  width: 100%;
+  max-width: 680px;
+  text-align: center;
+}
+
+.not-found__code {
+  font-family: var(--font-mono);
+  font-size: clamp(96px, 18vw, 180px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  color: transparent;
+  background: linear-gradient(
+    135deg,
+    var(--blue),
+    var(--purple)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-bottom: 28px;
+}
+
+.not-found__terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  margin-bottom: 24px;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-muted);
+
+  overflow: hidden;
+}
+
+.not-found__prompt {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.not-found__terminal span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.not-found h1 {
+  margin-bottom: 12px;
+  font-size: clamp(30px, 5vw, 48px);
+}
+
+.not-found p {
+  max-width: 500px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  font-size: 17px;
+}
+
+.not-found__actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.not-found__actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.not-found__actions .btn:hover {
+  transform: translateY(-2px);
+}
+
+.not-found__actions .btn-primary {
+  background: var(--blue);
+  color: #fff;
+}
+
+.not-found__actions .btn-primary:hover {
+  background: var(--blue-strong);
+}
+
+.not-found__actions .btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.not-found__actions .btn-secondary:hover {
+  border-color: var(--border-strong);
+}
+
+@media (max-width: 600px) {
+  .not-found {
+    padding: 24px 16px;
+  }
+
+  .not-found__terminal {
+    max-width: 100%;
+  }
+
+  .not-found__actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
